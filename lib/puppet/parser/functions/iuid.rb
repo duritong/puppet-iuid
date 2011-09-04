@@ -23,7 +23,7 @@ Puppet::Parser::Functions::newfunction(:iuid, :type => :rvalue, :doc =>
     raise(Puppet::ParseError, "You need rubygems to use Trocla") unless Puppet.features.rubygems?
 
     require 'rubygems'
-    require 'trocla'
+    require 'iuid'
 
     Iuid.new(configfile).create(args[0],args[1])
 end
