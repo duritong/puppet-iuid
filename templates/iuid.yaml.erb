@@ -1,8 +1,8 @@
 ---
 categories:
-  <% categories.each do |catname,minuid| -%>
-  <%= "#{catname}: #{minuid}" %>
-  <% end -%>
+<% categories.each do |catname,minuid| -%>
+<%= "  #{catname}: #{minuid}" %>
+<% end -%>
 adapter_options:
   :path: <%= datafile %>
 
