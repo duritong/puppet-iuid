@@ -13,7 +13,7 @@ class iuid::config(
   $datafile = "${settings::confdir}/iuid_data.yaml"
   file{
     "${settings::confdir}/iuid.yaml":
-      content => "---\nadapter_options:\n    :path: ${datafile}\n",
+      content => template('iuid/iuid.yaml.erb'),
       owner => root, group => puppet, mode => 0640;
     '/etc/iuid.yaml':
       ensure => link,
