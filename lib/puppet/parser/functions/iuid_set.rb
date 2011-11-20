@@ -17,7 +17,7 @@ Example:
     require 'iuid'
 
     unless (result = Iuid.new(configfile).get(args[0])) == args[1]
-      result = Iuid.new(configfile).set(args[0],args[1])
+      result = Iuid.new(configfile).set(args[0],args[1].to_i)
     end
     result
 end
