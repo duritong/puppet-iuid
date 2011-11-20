@@ -16,7 +16,7 @@ Example:
     require 'rubygems'
     require 'iuid'
 
-    unless (result = Iuid.new(configfile).get(args[0])) == args[1]
+    unless (result = Iuid.new(configfile).get(args[0])) == args[1].to_i
       result = Iuid.new(configfile).set(args[0],args[1].to_i)
     end
     result
