@@ -5,7 +5,7 @@
 # [Remember: No empty lines between comments and class definition]
 class iuid::master::ree {
 
-  require ruby-enterprise::gems::moneta
+  require ruby_enterprise::gems::moneta
   
-  ruby-enterprise::gem{'iuid': }
+  ruby_enterprise::gem{'iuid': }
 }
