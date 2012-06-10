@@ -1,7 +1,7 @@
 ---
 categories:
-<% categories.each do |catname,minuid| -%>
-<%= "  #{catname}: #{minuid}" %>
+<% categories.keys.sort.each do |catname| -%>
+<%= "  #{catname}: #{categories[minuid]}" %>
 <% end %>
 adapter_options:
   :path: <%= datafile %>
