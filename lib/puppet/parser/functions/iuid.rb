@@ -20,9 +20,6 @@ Puppet::Parser::Functions::newfunction(:iuid, :type => :rvalue, :doc =>
     configfile = File.join(File.dirname(Puppet.settings[:config]), "iuid.yaml")
     raise Puppet::ParseError, "Configuration file does not exist" unless File.exists?(configfile)
 
-    raise(Puppet::ParseError, "You need rubygems to use iuid") unless Puppet.features.rubygems?
-
-    require 'rubygems'
     require 'iuid'
 
     Iuid.new(configfile).create(args[0],args[1])
