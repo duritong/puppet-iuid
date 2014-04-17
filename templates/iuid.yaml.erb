@@ -1,8 +1,8 @@
 ---
 categories:
-<% categories.keys.sort.each do |catname| -%>
-<%= "  #{catname}: #{categories[catname]}" %>
+<% @categories.keys.sort.each do |catname| -%>
+<%= "  #{catname}: #{@categories[catname]}" %>
 <% end %>
 adapter_options:
-  :file: <%= datafile %>
+  :file: <%= @datafile %>
 

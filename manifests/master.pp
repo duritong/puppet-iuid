@@ -6,7 +6,7 @@
 class iuid::master {
 
   require rubygems::moneta
-  
+
   package{'iuid':
       ensure   => present,
       provider => gem,
