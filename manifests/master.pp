@@ -4,11 +4,7 @@
 #
 # [Remember: No empty lines between comments and class definition]
 class iuid::master {
-
-  require rubygems::moneta
-
-  package{'iuid':
-      ensure   => present,
-      provider => gem,
+  package{'rubygem-iuid':
+    ensure   => present,
   }
 }
