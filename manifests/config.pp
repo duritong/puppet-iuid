@@ -1,6 +1,7 @@
 # config for uid
 class iuid::config(
   $categories = {},
+  $edit_uid   = 'puppet',
 ) {
   require iuid::master
 
@@ -9,15 +10,15 @@ class iuid::config(
   file{
     "${settings::confdir}/iuid.yaml":
       content => template('iuid/iuid.yaml.erb'),
-      owner   => root,
-      group   => puppet,
+      owner   => 'root',
+      group   => $edit_uid,
       mode    => '0640';
     '/etc/iuid.yaml':
       ensure  => link,
       target  => "${settings::confdir}/iuid.yaml";
     $datafile:
       ensure  => present,
-      owner   => puppet,
+      owner   => $edit_uid,
       group   => 0,
       mode    => '0600';
   }
