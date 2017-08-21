@@ -2,11 +2,11 @@
 class iuid::config(
   $categories = {},
   $edit_uid   = 'puppet',
+  $datafile   = "${settings::confdir}/iuid_data.yaml"
 ) {
   require iuid::master
 
   # deploy default config file and link it for iuid cli lookup
-  $datafile = "${settings::confdir}/iuid_data.yaml"
   file{
     "${settings::confdir}/iuid.yaml":
       content => template('iuid/iuid.yaml.erb'),
