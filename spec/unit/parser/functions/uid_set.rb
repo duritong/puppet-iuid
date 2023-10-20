@@ -28,7 +28,7 @@ describe "the iuid_set function" do
   end
 
   it "should raise a ParseError if the configuration file does not exist" do
-    File.exists?('/tmp/iud.XXXXXX/iuid.yaml').should_not be_true
+    File.exist?('/tmp/iud.XXXXXX/iuid.yaml').should_not be_true
 
     lambda { @scope.function_iuid_set("foo", "bar") }.should( raise_error(Puppet::ParseError) ) 
   end

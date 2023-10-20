@@ -7,7 +7,7 @@ require 'fileutils'
 
 def randomfilename
   filename = nil
-  while filename.nil? || (filename && File.exists?(filename)) do
+  while filename.nil? || (filename && File.exist?(filename)) do
     filename = "/tmp/iuid.#{(rand*100).to_i}"
   end
   filename
@@ -38,7 +38,7 @@ describe "the iuid function" do
   it "should raise a ParseError if the configuration file does not exist" do
     puppet_confdir = randomfilename
     Dir.mkdir puppet_confdir
-    File.exists?(File.join(puppet_confdir,'iuid.yaml')).should_not be_true
+    File.exist?(File.join(puppet_confdir,'iuid.yaml')).should_not be_true
 
     lambda { @scope.function_iuid("foo", "bar") }.should( raise_error(Puppet::ParseError) ) 
     Dir.rmdir puppet_confdir

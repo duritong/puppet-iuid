@@ -18,7 +18,7 @@ Puppet::Parser::Functions::newfunction(:iuid, :type => :rvalue, :doc =>
     raise Puppet::ParseError, "Wrong number of arguments" unless args.length == 2
 
     configfile = File.join(File.dirname(Puppet.settings[:config]), "iuid.yaml")
-    raise Puppet::ParseError, "Configuration file does not exist" unless File.exists?(configfile)
+    raise Puppet::ParseError, "Configuration file does not exist" unless File.exist?(configfile)
 
     require 'iuid'
 
